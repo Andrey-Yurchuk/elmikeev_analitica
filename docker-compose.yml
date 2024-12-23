@@ -1,0 +1,15 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile
+        volumes:
+            - .:/var/www
+        ports:
+            - "8000:8000"
+        networks:
+            - laravel
+
+networks:
+    laravel:
+        driver: bridge
